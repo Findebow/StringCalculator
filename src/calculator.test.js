@@ -18,5 +18,16 @@ it("should return the sum of multiple numbers", () => {
 });
 
 it("should return the sum of all numbers", () => {
-    expect(add("1 \n 2,3 \n 4")).toBe(10);
+    expect(add("1\n2,3\n4")).toBe(10);
+});
+
+it("should throw exeption negatives not allowed", () => {
+    function negativeTest1 () {
+        add("1\n-2,3,-4");
+    }
+    expect(negativeTest1).toThrowError("Negatives not allowed -2,-4");
+    function negativeTest2 () {
+        add("-1");
+    }
+    expect(negativeTest2).toThrowError("Negatives not allowed -1");
 });
