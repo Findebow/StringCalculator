@@ -31,3 +31,7 @@ it("should throw exeption negatives not allowed", () => {
     }
     expect(negativeTest2).toThrowError("Negatives not allowed -1");
 });
+
+it("should return the sum of all numbers ignoring numbers higher than 1000", () => {
+    expect(add("1\n2,3\n4,1001")).toBe(10);
+});
